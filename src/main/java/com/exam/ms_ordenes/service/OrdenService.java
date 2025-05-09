@@ -1,5 +1,6 @@
 package com.exam.ms_ordenes.service;
 
+import com.exam.ms_ordenes.client.ProductoClient;
 import com.exam.ms_ordenes.entity.Orden;
 import com.exam.ms_ordenes.repository.OrdenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
