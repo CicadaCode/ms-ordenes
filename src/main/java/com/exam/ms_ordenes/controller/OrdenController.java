@@ -4,6 +4,7 @@ import com.exam.ms_ordenes.dto.OrdenDto;
 import com.exam.ms_ordenes.entity.Orden;
 import com.exam.ms_ordenes.service.OrdenService;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,13 +13,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static org.springframework.http.HttpStatus.CREATED;
-
 @RestController
 @RequestMapping("/ordenes")
+@AllArgsConstructor
 public class OrdenController {
 
-    @Autowired
     private OrdenService service;
 
     // Endpoint para crear una nueva orden
