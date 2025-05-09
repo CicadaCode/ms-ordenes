@@ -10,9 +10,15 @@ import java.util.List;
 
 @Service
 public class OrdenService {
+    private final OrdenRepository ordenRepository;
+    private final ProductoClient productoClient;
+
     @Autowired
-    private OrdenRepository ordenRepository;
-    @Autowired private ProductoClient productoClient;
+    public OrdenService(OrdenRepository ordenRepository, ProductoClient productoClient) {
+        this.ordenRepository = ordenRepository;
+        this.productoClient = productoClient;
+    }
+
     public Orden crearOrden(Orden orden) {
         productoClient.validarProductos(orden.getProductosIds());
         return ordenRepository.save(orden);
